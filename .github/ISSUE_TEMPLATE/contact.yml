@@ -1,0 +1,51 @@
+name: お問い合わせ / Contact
+description: ATTICへのご意見・不具合の報告・ご質問 / Feedback, bug reports and questions about ATTIC
+title: "[お問い合わせ] "
+labels: ["contact"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **この投稿は公開されます。メールアドレス・住所・NASのURLやパスワードなどの個人情報は書かないでください。**
+        **This submission is public. Do not include personal information such as email addresses, NAS URLs or passwords.**
+  - type: dropdown
+    id: category
+    attributes:
+      label: 種類 / Category
+      options:
+        - 不具合の報告 / Bug report
+        - 機能リクエスト / Feature request
+        - 改善の提案 / Suggestion
+        - 使い方の質問 / Question
+        - その他 / Other
+    validations:
+      required: true
+  - type: textarea
+    id: message
+    attributes:
+      label: 内容 / Message
+      description: 不具合の場合は、操作の手順と起きたことを書いてください。 / For bugs, describe the steps and what happened.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 機種 / Device
+      placeholder: iPhone 16 Pro
+  - type: input
+    id: ios
+    attributes:
+      label: iOSのバージョン / iOS version
+      placeholder: "26.4"
+  - type: input
+    id: app
+    attributes:
+      label: ATTICのバージョン / ATTIC version
+      description: 設定 → オープンソースライセンス のリンク末尾（例 attic-1.0-2） / Shown at the end of the link in Settings → Open source licenses
+  - type: checkboxes
+    id: public
+    attributes:
+      label: 確認 / Confirmation
+      options:
+        - label: 投稿が公開されること、個人情報を含めていないことを確認しました / I understand this is public and contains no personal information
+          required: true
